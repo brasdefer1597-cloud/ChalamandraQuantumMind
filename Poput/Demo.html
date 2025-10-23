@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chalamandra Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+            color: #1f2937;
+        }
+        
+        .dashboard {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .dashboard-header h1 {
+            margin: 0;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .dashboard-content {
+            padding: 30px;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .metric-card {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .metric-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #6366f1;
+            margin-bottom: 8px;
+        }
+        
+        .metric-label {
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        .rituals-section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #1f2937;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 8px;
+        }
+        
+        .rituals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .ritual-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .ritual-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .ritual-icon {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        
+        .ritual-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1f2937;
+        }
+        
+        .ritual-description {
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        
+        .ritual-effectiveness {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #64748b;
+        }
+        
+        .effectiveness-bar {
+            flex: 1;
+            height: 4px;
+            background: #e2e8f0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .effectiveness-fill {
+            height: 100%;
+            background: #10b981;
+            border-radius: 2px;
+        }
+        
+        .coming-soon {
+            text-align: center;
+            padding: 60px 20px;
+            color: #64748b;
+        }
+        
+        .demo-notice {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="dashboard-header">
+            <h1>🦎 Chalamandra QuantumMind Dashboard</h1>
+            <p>Advanced Communication Analytics & Ritual Effectiveness</p>
+        </div>
+        
+        <div class="dashboard-content">
+            <div class="demo-notice">
+                <strong>🚀 Chrome Challenge 2025 Demo</strong> - This dashboard shows advanced analytics that would be available in the full version.
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">87%</div>
+                    <div class="metric-label">Overall Communication Health</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">42</div>
+                    <div class="metric-label">Rituals Completed This Week</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">94%</div>
+                    <div class="metric-label">User Satisfaction</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">65%</div>
+                    <div class="metric-label">Stress Reduction</div>
+                </div>
+            </div>
+            
+            <div class="rituals-section">
+                <h2 class="section-title">Ritual Effectiveness</h2>
+                <div class="rituals-grid">
+                    <div class="ritual-card">
+                        <div class="ritual-icon">🗣️</div>
+                        <div class="ritual-name">Enki Whisper</div>
+                        <div class="ritual-description">
+                            Rapid state change through breath-controlled seed words and vagus nerve stimulation.
+                        </div>
+                        <div class="ritual-effectiveness">
+                            <span>94% Effective</span>
+                            <div class="effectiveness-bar">
+                                <div class="effectiveness-fill" style="width: 94%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ritual-card">
+                        <div class="ritual-icon">🌀</div>
+                        <div class="ritual-name">Tun Spiral</div>
+                        <div class="ritual-description">
+                            Visual habit formation system using Fibonacci progress tracking and dopamine rewards.
+                        </div>
+                        <div class="ritual-effectiveness">
+                            <span>88% Effective</span>
+                            <div class="effectiveness-bar">
+                                <div class="effectiveness-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ritual-card">
+                        <div class="ritual-icon">👁️</div>
+                        <div class="ritual-name">Maat Mirror</div>
+                        <div class="ritual-description">
+                            30-second self-observation practice for perspective shifting and emotional regulation.
+                        </div>
+                        <div class="ritual-effectiveness">
+                            <span>76% Effective</span>
+                            <div class="effectiveness-bar">
+                                <div class="effectiveness-fill" style="width: 76%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ritual-card">
+                        <div class="ritual-icon">🌬️</div>
+                        <div class="ritual-name">Ziggurat Breath</div>
+                        <div class="ritual-description">
+                            Structured 4-7-8 breathing with visualization for nervous system regulation.
+                        </div>
+                        <div class="ritual-effectiveness">
+                            <span>91% Effective</span>
+                            <div class="effectiveness-bar">
+                                <div class="effectiveness-fill" style="width: 91%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="coming-soon">
+                <h2>📈 Advanced Analytics Coming Soon</h2>
+                <p>This dashboard will include:</p>
+                <ul style="text-align: left; display: inline-block;">
+                    <li>Detailed communication pattern analysis</li>
+                    <li>Personalized ritual recommendations</li>
+                    <li>Progress tracking and goal setting</li>
+                    <li>Exportable reports and insights</li>
+                    <li>Team collaboration features</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+  </html>
