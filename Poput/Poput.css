@@ -1,3 +1,29 @@
+/* Reset y Variables CSS */
+:root {
+  /* Chalamandra Colors */
+  --chalamandra-primary: #FF6B35;
+  --chalamandra-secondary: #FFE66D;
+  --chalamandra-accent: #4ECDC4;
+  
+  /* Quantum Colors */
+  --quantum-superposition: #7E57C2;
+  --quantum-entanglement: #29B6F6;
+  --quantum-collapse: #FF7043;
+  
+  /* Feedback Colors */
+  --feedback-input: #66BB6A;
+  --feedback-process: #5C6BC0;
+  --feedback-output: #FFA726;
+  --feedback-evolution: #AB47BC;
+  
+  /* UI Colors */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e1b4b;
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,20 +31,21 @@
 }
 
 body {
-  width: 450px;
-  min-height: 550px;
-  font-family: 'Segoe UI', system-ui, sans-serif;
-  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-  color: #e2e8f0;
-  overflow: hidden;
+  width: 480px;
+  min-height: 600px;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  color: var(--text-primary);
+  overflow-x: hidden;
 }
 
 .container {
   padding: 20px;
   position: relative;
+  min-height: 100vh;
 }
 
-/* Logo Chalamandra con flujo de transformación */
+/* Header Styles */
 .header {
   text-align: center;
   margin-bottom: 25px;
@@ -36,412 +63,25 @@ body {
   font-size: 42px;
   animation: chalamandra-flow 6s ease-in-out infinite;
   filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.6));
-  position: relative;
 }
 
-.chalamandra-logo::before {
-  content: "🦎";
-  position: absolute;
-  animation: quantum-superposition 4s ease-in-out infinite;
-  opacity: 0.7;
-}
-
-.logo h1 {
-  font-size: 26px;
-  font-weight: 800;
-  background: linear-gradient(135deg, var(--chalamandra-primary), var(--chalamandra-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 6px;
-  text-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
-}
-
-.subtitle {
-  font-size: 13px;
-  color: #94a3b8;
-  font-weight: 500;
-  letter-spacing: 1px;
-}
-
-/* Sección Cuántica con Estados Asíncronos */
-.quantum-section {
-  background: rgba(30, 41, 59, 0.7);
-  border: 2px solid;
-  border-image: linear-gradient(45deg, var(--quantum-superposition), var(--quantum-entanglement), var(--quantum-collapse)) 1;
-  border-radius: 16px;
-  padding: 18px;
-  margin-bottom: 18px;
-  backdrop-filter: blur(15px);
-  animation: border-glow 3s ease-in-out infinite alternate;
-}
-
-@keyframes border-glow {
-  0% { box-shadow: 0 0 20px rgba(126, 87, 194, 0.3); }
-  100% { box-shadow: 0 0 30px rgba(41, 182, 246, 0.4); }
-}
-
-.quantum-section h3 {
-  color: var(--quantum-entanglement);
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-/* Qubits con animaciones asíncronas individuales */
-.qubit-display {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.qubit {
-  padding: 8px 16px;
-  background: rgba(56, 189, 248, 0.15);
-  border: 2px solid;
-  border-radius: 25px;
-  font-family: 'Courier New', monospace;
-  font-size: 12px;
-  font-weight: 600;
-  color: #7dd3fc;
-  position: relative;
-  overflow: hidden;
-}
-
-.qubit::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { left: -100%; }
-  100% { left: 100%; }
-}
-
-/* Animaciones asíncronas para cada qubit */
-#surfaceQubit {
-  border-color: var(--chalamandra-primary);
-  animation: quantum-pulse-1 3s ease-in-out infinite;
-}
-
-#hiddenQubit {
-  border-color: var(--quantum-superposition);
-  animation: quantum-pulse-2 3.5s ease-in-out infinite;
-  animation-delay: 0.5s;
-}
-
-#intentQubit {
-  border-color: var(--quantum-entanglement);
-  animation: quantum-pulse-3 4s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-@keyframes quantum-pulse-1 {
-  0%, 100% { 
-    transform: translateY(0) scale(1);
-    box-shadow: 0 0 15px var(--chalamandra-primary);
-  }
-  50% { 
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 0 25px var(--chalamandra-primary);
-  }
-}
-
-@keyframes quantum-pulse-2 {
-  0%, 100% { 
-    transform: translateY(0) scale(1);
-    box-shadow: 0 0 15px var(--quantum-superposition);
-  }
-  50% { 
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 0 25px var(--quantum-superposition);
-  }
-}
-
-@keyframes quantum-pulse-3 {
-  0%, 100% { 
-    transform: translateY(0) scale(1);
-    box-shadow: 0 0 15px var(--quantum-entanglement);
-  }
-  50% { 
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 0 25px var(--quantum-entanglement);
-  }
-}
-
-/* Panel de Estado con Flujo Retroalimentador */
-.status-panel {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(15px);
-  padding: 15px;
-  border-radius: 15px;
-  margin-bottom: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  position: relative;
-}
-
-.status-panel::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 17px;
-  background: linear-gradient(45deg, var(--feedback-input), var(--feedback-process), var(--feedback-output), var(--feedback-evolution));
-  z-index: -1;
-  animation: feedback-spiral 8s linear infinite;
-}
-
-.status-indicator {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: #cbd5e1;
-}
-
-.status-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--feedback-input);
-  animation: status-pulse 2s ease-in-out infinite;
-}
-
-@keyframes status-pulse {
-  0%, 100% { 
-    background: var(--feedback-input);
-    transform: scale(1);
+@keyframes chalamandra-flow {
+  0% { 
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.6));
   }
   25% { 
-    background: var(--feedback-process);
-    transform: scale(1.2);
+    transform: scale(1.1) rotate(90deg);
+    filter: drop-shadow(0 0 15px rgba(255, 230, 109, 0.8));
   }
   50% { 
-    background: var(--feedback-output);
-    transform: scale(1.1);
+    transform: scale(1.05) rotate(180deg);
+    filter: drop-shadow(0 0 12px rgba(78, 205, 196, 0.7));
   }
   75% { 
-    background: var(--feedback-evolution);
-    transform: scale(1.3);
+    transform: scale(1.1) rotate(270deg);
+    filter: drop-shadow(0 0 15px rgba(171, 71, 188, 0.8));
   }
-}
-
-/* Secciones de Análisis con Efecto de Retroalimentación */
-.analysis-section, .suggestions-section {
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 15px;
-  padding: 18px;
-  margin-bottom: 18px;
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.analysis-section::before, .suggestions-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--chalamandra-accent), transparent);
-  animation: section-flow 6s ease-in-out infinite;
-}
-
-@keyframes section-flow {
-  0% { left: -100%; }
-  50% { left: 100%; }
-  100% { left: 100%; }
-}
-
-.analysis-section:hover, .suggestions-section:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-.analysis-section h3, .suggestions-section h3 {
-  font-size: 15px;
-  margin-bottom: 15px;
-  color: var(--chalamandra-secondary);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-}
-
-/* Elementos de Paradox con Colores Asíncronos */
-.paradox-item {
-  background: linear-gradient(135deg, rgba(254, 226, 226, 0.1), rgba(254, 215, 215, 0.05));
-  border-left: 4px solid;
-  border-image: linear-gradient(to bottom, var(--chalamandra-primary), var(--quantum-collapse)) 1;
-  padding: 14px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  animation: paradox-glow 4s ease-in-out infinite;
-}
-
-@keyframes paradox-glow {
-  0%, 100% { box-shadow: 0 0 10px rgba(255, 107, 53, 0.2); }
-  50% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.4); }
-}
-
-.suggestion-item {
-  background: linear-gradient(135deg, rgba(240, 253, 244, 0.1), rgba(187, 247, 208, 0.05));
-  border-left: 4px solid;
-  border-image: linear-gradient(to bottom, var(--chalamandra-accent), var(--feedback-output)) 1;
-  padding: 14px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  animation: suggestion-glow 4s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-@keyframes suggestion-glow {
-  0%, 100% { box-shadow: 0 0 10px rgba(78, 205, 196, 0.2); }
-  50% { box-shadow: 0 0 20px rgba(78, 205, 196, 0.4); }
-}
-
-/* Botones con Efecto de Transformación Chalamandra */
-.actions {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.btn {
-  flex: 1;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 12px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.4s ease;
-  backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: left 0.5s ease;
-}
-
-.btn:hover::before {
-  left: 100%;
-}
-
-.btn.primary {
-  background: linear-gradient(135deg, var(--chalamandra-primary), var(--chalamandra-secondary));
-  color: #1e1b4b;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-}
-
-.btn.primary:hover {
-  background: linear-gradient(135deg, var(--chalamandra-secondary), var(--chalamandra-primary));
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
-}
-
-.btn.secondary {
-  background: rgba(255, 255, 255, 0.1);
-  color: #e2e8f0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-}
-
-.btn.secondary:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-}
-
-/* Badge de Privacidad con Flujo Continuo */
-.privacy-badge {
-  text-align: center;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-}
-
-.privacy-badge::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, var(--feedback-input), var(--feedback-process), var(--feedback-output), var(--feedback-evolution));
-  animation: privacy-flow 4s linear infinite;
-}
-
-@keyframes privacy-flow {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-/* Estados de riesgo con colores asíncronos */
-.risk-high { 
-  background: linear-gradient(135deg, rgba(254, 226, 226, 0.2), rgba(252, 165, 165, 0.1));
-  color: #fca5a5;
-  animation: risk-high-pulse 2s ease-in-out infinite;
-}
-
-.risk-medium { 
-  background: linear-gradient(135deg, rgba(254, 252, 191, 0.2), rgba(217, 119, 6, 0.1));
-  color: #fbbf24;
-  animation: risk-medium-pulse 2.5s ease-in-out infinite;
-}
-
-.risk-low { 
-  background: linear-gradient(135deg, rgba(198, 246, 213, 0.2), rgba(34, 197, 94, 0.1));
-  color: #86efac;
-  animation: risk-low-pulse 3s ease-in-out infinite;
-}
-
-@keyframes risk-high-pulse {
-  0%, 100% { box-shadow: 0 0 10px rgba(252, 165, 165, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(252, 165, 165, 0.6); }
-}
-
-@keyframes risk-medium-pulse {
-  0%, 100% { box-shadow: 0 0 10px rgba(251, 191, 36, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.6); }
-}
-
-@keyframes risk-low-pulse {
-  0%, 100% { box-shadow: 0 0 10px rgba(134, 239, 172, 0.3); }
-  50% { box-shadow: 0 0 20px rgba(134, 239, 172, 0.6); }
-}
+  100% { 
+    transform: scale(1) rotate(360deg);
+    filter: drop-shadow(0 0 10px rgba(255,
