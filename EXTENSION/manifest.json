@@ -1,49 +1,80 @@
 {
   "manifest_version": 3,
   "name": "Chalamandra QuantumMind",
-  "version": "1.0.0",
-  "description": "AI-powered communication intelligence with neuroscience-based rituals",
+  "version": "2025.1.0",
+  "description": "Quantum Paradox Communication AI - Decoding what you mean, not just what you say",
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://*.slack.com/*",
+    "https://teams.microsoft.com/*",
+    "https://*.discord.com/*",
+    "https://*.notion.so/*"
+  ],
+  
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "Chalamandra - Enhance Your Communication",
+    "default_title": "Chalamandra QM - Quantum Paradox Decoder",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     }
   },
-  "permissions": [
-    "activeTab",
-    "storage",
-    "scripting"
-  ],
-  "host_permissions": [
-    "https://mail.google.com/*",
-    "https://*.slack.com/*",
-    "https://teams.microsoft.com/*"
-  ],
+  
   "content_scripts": [
     {
       "matches": [
         "https://mail.google.com/*",
         "https://*.slack.com/*",
-        "https://teams.microsoft.com/*"
+        "https://teams.microsoft.com/*",
+        "https://*.discord.com/*",
+        "https://*.notion.so/*"
       ],
       "js": ["content/content-script.js"],
-      "css": ["content/content-styles.css"]
+      "css": ["content/content-styles.css"],
+      "run_at": "document_idle"
     }
   ],
-  "web_accessible_resources": [{
-    "resources": [
-      "popup/dashboard.html",
-      "rituals/*",
-      "icons/*"
-    ],
-    "matches": ["<all_urls>"]
-  }],
-  "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
-  }
+  
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "content/*",
+        "popup/*",
+        "icons/*",
+        "background/*"
+      ],
+      "matches": [
+        "https://mail.google.com/*",
+        "https://*.slack.com/*",
+        "https://teams.microsoft.com/*",
+        "https://*.discord.com/*",
+        "https://*.notion.so/*"
+      ]
+    }
+  ],
+  
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  
+  "minimum_chrome_version": "118"
 }
