@@ -1,151 +1,137 @@
-# 🦎 Chalamandra QuantumMind - Chrome Challenge 2025
+# 🦎⚛️ Chalamandra QuantumMind
 
-## 🚀 Innovation Award Submission
+> **Quantum Paradox Communication AI**  
+> *Decoding what you mean, not just what you say*
 
-### 🎯 Problem Statement
-**Communication Overload & Emotional Intelligence Gap**
-Modern professionals face communication fatigue, emotional misalignment, and cognitive overload in digital conversations, leading to stress, misunderstandings, and reduced productivity.
+![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-green)
+![Manifest V3](https://img.shields.io/badge/Manifest-V3-blue)
+![Chrome AI APIs](https://img.shields.io/badge/Chrome-AI%20APIs-orange)
+![MIT License](https://img.shields.io/badge/License-MIT-yellow)
+![Hackathon 2025](https://img.shields.io/badge/Google-Hackathon%202025-red)
 
-### 💡 Our Solution
-**Neuroscience-Based Communication Intelligence**
-Chalamandra combines AI analysis with 7 scientifically-grounded psychological rituals to enhance communication effectiveness, reduce stress, and improve emotional intelligence in digital conversations.
+## 🎯 Overview
 
-### 🔬 Scientific Foundation
-- **Vagus Nerve Stimulation** (Enki Whisper)
-- **Dopamine Reward Pathways** (Tun Spiral)  
-- **Self-Referential Neural Networks** (Maat Mirror)
-- **Subconscious Priming** (Ghost Symbol)
-- **Polyvagal Theory** (Ziggurat Breath)
-- **Intrinsic Motivation** (Jaguar Box)
-- **Ultradian Rhythms** (Fractal Sun)
+Chalamandra QuantumMind is a revolutionary Chrome extension that uses Chrome's built-in AI APIs to detect and resolve communication paradoxes in real-time. Unlike traditional grammar tools, we decode hidden meanings, sarcasm, and ambiguity using quantum-inspired algorithms.
 
-### 🛠️ Technical Implementation
-- **Chrome Extension MV3** compliant
-- **Real-time Content Analysis** across Gmail, Slack, Teams
-- **Local AI Processing** (privacy-first design)
-- **Cross-platform Integration** with seamless UX
+## 🌟 Features
 
-## 🎯 Demo Features
-
-### 🎨 Popup Interface
-- Real-time communication analysis
-- Ritual recommendation engine  
-- Communication health metrics
-- Psychology protocol toggles
-- Recent analysis history
-
-### 🔍 Content Analysis
-- Sentiment and tone detection
-- Complexity assessment
-- Risk factor identification
-- Context-aware ritual suggestions
-- Non-intrusive user prompts
-
-### 🧠 Seven Rituals Implementation
-1. **Enki Whisper** - Breath-controlled state change
-2. **Tun Spiral** - Visual habit formation
-3. **Maat Mirror** - Self-observation practice
-4. **Ghost Symbol** - Subconscious priming
-5. **Ziggurat Breath** - Structured breathing
-6. **Jaguar Box** - Intrinsic motivation
-7. **Fractal Sun** - Optimal work rhythms
+- **🔍 Quantum Paradox Detection**: Identify hidden meanings and contradictions
+- **⚡ Real-time Analysis**: Instant feedback as you type
+- **🔒 100% Local Processing**: Zero data leaves your device
+- **🎯 Multi-Platform**: Works across Gmail, Slack, Teams, and more
+- **🧠 Chrome AI APIs**: Proofreader, Prompt, Rewriter + Gemini Nano
 
 ## 🚀 Quick Start
 
 ### Installation
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/brasdefer1597-cloud/Chalamandra-QuantumMind.git
-   1. Load in Chrome
-   · Open chrome://extensions/
-   · Enable "Developer mode"
-   · Click "Load unpacked"
-   · Select the extension folder
-2. Test the Demo
-   · Navigate to Gmail or Slack
-   · Click the Chalamandra icon
-   · Use "Analyze Current Page"
-   · Explore ritual recommendations
 
-Demo Script for Judges
+```bash
+# Clone repository
+git clone https://github.com/ChalamandraQuantumMind/chrome-ai-hackathon-2025.git
+cd chrome-ai-hackathon-2025
 
-1. Show Popup Interface - Highlight design and metrics
-2. Analyze Current Page - Demonstrate real-time analysis
-3. Toggle Protocols - Explain psychological foundations
-4. View Impact Metrics - Show demonstrated benefits
-5. Explore Dashboard - Display advanced analytics
+# Chrome Installation:
+# 1. Navigate to chrome://extensions/
+# 2. Enable "Developer mode"
+# 3. Click "Load unpacked"
+# 4. Select the project folder
+# 5. Pin extension to toolbar
+Immediate Testing
 
-📊 Impact Metrics
+1. Open Gmail, Slack, or Microsoft Teams
+2. Click Chalamandra icon in toolbar
+3. Click "Quantum Analyze"
+4. View paradoxical communication analysis
+5. See clear rewriting suggestions
 
-· 40% reduction in communication stress
-· 65% improvement in message clarity
-· 30% faster conflict resolution
-· 50% increase in communication confidence
-· 94% effectiveness for Enki Whisper ritual
+🛠️ Technical Stack
 
-🏗️ Architecture
+· Chrome Extension (Manifest V3)
+· Chrome AI APIs: Proofreader, Prompt, Rewriter
+· Gemini Nano (Local processing fallback)
+· Quantum-inspired Algorithms
+· Real-time Text Analysis
 
-File Structure
+📁 Project Structure
 
 ```
-Chalamandra-QuantumMind/
-├── manifest.json
-├── icons/
-├── popup/
+chalamandra-quantummind/
+├── 📄 manifest.json
+├── 📄 package.json
+├── 📄 README.md
+├── 📄 LICENSE
+├── 🎨 popup/
 │   ├── popup.html
 │   ├── popup.css
-│   ├── popup.js
-│   └── dashboard.html
-├── content/
+│   └── popup.js
+├── 🔍 content/
 │   ├── content-script.js
 │   └── content-styles.css
-└── README.md
+├── 🛠️ background/
+│   └── service-worker.js
+├── 📚 docs/
+│   ├── DEMO_SCRIPT.md
+│   ├── JUDGE_TESTING_GUIDE.md
+│   └── PARADOX_EXAMPLES.md
+├── 🖼️ icons/
+│   ├── icon16.png
+│   ├── icon48.png
+│   └── icon128.png
+└── 🔧 scripts/
+    ├── build.js
+    └── test-runner.js
 ```
 
-Key Components
+🎥 Demo Video
 
-· Popup UI - Main user interface
-· Content Scripts - Real-time page analysis
-· Ritual Engine - Neuroscience-based interventions
-· AI Analysis - Communication intelligence
-· Dashboard - Advanced analytics
+Watch our 2:50 minute demo video
 
-🔬 Scientific Validation
+🏆 Hackathon Submission
 
-Each ritual is based on established psychological and neuroscientific principles:
+Google Chrome Built-in AI Challenge 2025
 
-· Polyvagal Theory (Stephen Porges)
-· Habit Formation (James Clear's Atomic Habits)
-· Self-Determination Theory (Deci & Ryan)
-· Chronobiology (Ultradian Rhythms)
-· Priming Effects (Cognitive Psychology)
+· ✅ Chrome Extension with Manifest V3
+· ✅ Chrome AI APIs: Proofreader, Prompt, Rewriter
+· ✅ Gemini Nano Integration
+· ✅ Working Application with full functionality
+· ✅ Demo Video (2:50 minutes)
+· ✅ GitHub Repository with MIT License
+· ✅ Comprehensive Documentation
+
+🔧 Development
+
+```bash
+# Install dependencies (if any)
+npm install
+
+# Build extension
+npm run build
+
+# Create distribution package
+npm run pack
+```
+
+🤝 Contributing
+
+We welcome contributions! Please see our Contributing Guidelines for details.
+
+📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 👥 Team
 
-· AI & Neuroscience Research
-· Chrome Extension Development
-· UX/UI Psychology Design
-· Behavioral Science Integration
+· Danna - Project Lead & Quantum Algorithm Design
+· Chalamandra AI - Paradox Detection Engine
 
-📈 Future Roadmap
+🔗 Links
 
-· Mobile app companion
-· Team collaboration features
-· Advanced AI model training
-· Enterprise integration
-· Clinical validation studies
-
-🎯 Chrome Challenge 2025
-
-This project demonstrates innovative use of:
-
-· Chrome Extension APIs for seamless integration
-· Real-time content analysis across platforms
-· Neuroscience-based UX for behavior change
-· Privacy-first AI with local processing
+· GitHub: https://github.com/ChalamandraQuantumMind/chrome-ai-hackathon-2025
+· Demo Video: https://youtube.com/chalamandra-quantummind-demo
+· Devpost: https://devpost.com/software/chalamandra-quantummind
 
 ---
 
-Built with ❤️ for Chrome Challenge 2025
+"From ambiguous to clear, from misunderstood to understood. Transform your team's communication with quantum-paradoxical AI intelligence." 🦎✨
 
 ```
