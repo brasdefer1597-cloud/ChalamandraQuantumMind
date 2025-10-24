@@ -1,541 +1,447 @@
-/* Reset and Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-gradient: linear-gradient(135deg, #6366f1, #8b5cf6);
-    --success-color: #10b981;
-    --warning-color: #f59e0b;
-    --error-color: #ef4444;
-    --bg-primary: white;
-    --bg-secondary: #f8fafc;
-    --text-primary: #1f2937;
-    --text-secondary: #6b7280;
-    --border-color: #e2e8f0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    width: 380px;
-    height: 500px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #333;
-    overflow: hidden;
+  width: 450px;
+  min-height: 550px;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: #e2e8f0;
+  overflow: hidden;
 }
 
-.popup-container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background: var(--bg-primary);
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+.container {
+  padding: 20px;
+  position: relative;
 }
 
-/* Header Styles */
-.popup-header {
-    background: var(--primary-gradient);
-    color: white;
-    padding: 16px;
-    border-radius: 12px 12px 0 0;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+/* Logo Chalamandra con flujo de transformación */
+.header {
+  text-align: center;
+  margin-bottom: 25px;
+  position: relative;
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.logo-icon {
-    font-size: 24px;
+.chalamandra-logo {
+  font-size: 42px;
+  animation: chalamandra-flow 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 107, 53, 0.6));
+  position: relative;
+}
+
+.chalamandra-logo::before {
+  content: "🦎";
+  position: absolute;
+  animation: quantum-superposition 4s ease-in-out infinite;
+  opacity: 0.7;
 }
 
 .logo h1 {
-    font-size: 18px;
-    font-weight: 700;
+  font-size: 26px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--chalamandra-primary), var(--chalamandra-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
+  text-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Sección Cuántica con Estados Asíncronos */
+.quantum-section {
+  background: rgba(30, 41, 59, 0.7);
+  border: 2px solid;
+  border-image: linear-gradient(45deg, var(--quantum-superposition), var(--quantum-entanglement), var(--quantum-collapse)) 1;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 18px;
+  backdrop-filter: blur(15px);
+  animation: border-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes border-glow {
+  0% { box-shadow: 0 0 20px rgba(126, 87, 194, 0.3); }
+  100% { box-shadow: 0 0 30px rgba(41, 182, 246, 0.4); }
+}
+
+.quantum-section h3 {
+  color: var(--quantum-entanglement);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Qubits con animaciones asíncronas individuales */
+.qubit-display {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.qubit {
+  padding: 8px 16px;
+  background: rgba(56, 189, 248, 0.15);
+  border: 2px solid;
+  border-radius: 25px;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: #7dd3fc;
+  position: relative;
+  overflow: hidden;
+}
+
+.qubit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Animaciones asíncronas para cada qubit */
+#surfaceQubit {
+  border-color: var(--chalamandra-primary);
+  animation: quantum-pulse-1 3s ease-in-out infinite;
+}
+
+#hiddenQubit {
+  border-color: var(--quantum-superposition);
+  animation: quantum-pulse-2 3.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+#intentQubit {
+  border-color: var(--quantum-entanglement);
+  animation: quantum-pulse-3 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes quantum-pulse-1 {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 15px var(--chalamandra-primary);
+  }
+  50% { 
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 25px var(--chalamandra-primary);
+  }
+}
+
+@keyframes quantum-pulse-2 {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 15px var(--quantum-superposition);
+  }
+  50% { 
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 25px var(--quantum-superposition);
+  }
+}
+
+@keyframes quantum-pulse-3 {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 15px var(--quantum-entanglement);
+  }
+  50% { 
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 25px var(--quantum-entanglement);
+  }
+}
+
+/* Panel de Estado con Flujo Retroalimentador */
+.status-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+}
+
+.status-panel::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 17px;
+  background: linear-gradient(45deg, var(--feedback-input), var(--feedback-process), var(--feedback-output), var(--feedback-evolution));
+  z-index: -1;
+  animation: feedback-spiral 8s linear infinite;
 }
 
 .status-indicator {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #cbd5e1;
 }
 
 .status-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #ef4444;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--feedback-input);
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+  0%, 100% { 
+    background: var(--feedback-input);
+    transform: scale(1);
+  }
+  25% { 
+    background: var(--feedback-process);
+    transform: scale(1.2);
+  }
+  50% { 
+    background: var(--feedback-output);
+    transform: scale(1.1);
+  }
+  75% { 
+    background: var(--feedback-evolution);
+    transform: scale(1.3);
+  }
+}
+
+/* Secciones de Análisis con Efecto de Retroalimentación */
+.analysis-section, .suggestions-section {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 15px;
+  padding: 18px;
+  margin-bottom: 18px;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.analysis-section::before, .suggestions-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--chalamandra-accent), transparent);
+  animation: section-flow 6s ease-in-out infinite;
+}
+
+@keyframes section-flow {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+.analysis-section:hover, .suggestions-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.analysis-section h3, .suggestions-section h3 {
+  font-size: 15px;
+  margin-bottom: 15px;
+  color: var(--chalamandra-secondary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+/* Elementos de Paradox con Colores Asíncronos */
+.paradox-item {
+  background: linear-gradient(135deg, rgba(254, 226, 226, 0.1), rgba(254, 215, 215, 0.05));
+  border-left: 4px solid;
+  border-image: linear-gradient(to bottom, var(--chalamandra-primary), var(--quantum-collapse)) 1;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  animation: paradox-glow 4s ease-in-out infinite;
+}
+
+@keyframes paradox-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(255, 107, 53, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.4); }
+}
+
+.suggestion-item {
+  background: linear-gradient(135deg, rgba(240, 253, 244, 0.1), rgba(187, 247, 208, 0.05));
+  border-left: 4px solid;
+  border-image: linear-gradient(to bottom, var(--chalamandra-accent), var(--feedback-output)) 1;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  animation: suggestion-glow 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes suggestion-glow {
+  0%, 100% { box-shadow: 0 0 10px rgba(78, 205, 196, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(78, 205, 196, 0.4); }
+}
+
+/* Botones con Efecto de Transformación Chalamandra */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  flex: 1;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
 }
 
-.status-dot.active {
-    background: #10b981;
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
 }
 
-/* Main Content */
-.popup-main {
-    flex: 1;
-    padding: 16px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.btn:hover::before {
+  left: 100%;
 }
 
-.popup-main h3 {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-primary);
+.btn.primary {
+  background: linear-gradient(135deg, var(--chalamandra-primary), var(--chalamandra-secondary));
+  color: #1e1b4b;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
 }
 
-/* Hackathon Banner */
-.hackathon-banner {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 8px;
+.btn.primary:hover {
+  background: linear-gradient(135deg, var(--chalamandra-secondary), var(--chalamandra-primary));
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
 }
 
-.banner-content {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
 }
 
-.banner-icon {
-    font-size: 20px;
+.btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 
-.banner-text {
-    display: flex;
-    flex-direction: column;
+/* Badge de Privacidad con Flujo Continuo */
+.privacy-badge {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
 }
 
-.banner-text small {
-    opacity: 0.9;
-    font-size: 11px;
+.privacy-badge::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--feedback-input), var(--feedback-process), var(--feedback-output), var(--feedback-evolution));
+  animation: privacy-flow 4s linear infinite;
 }
 
-/* Quick Actions */
-.action-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+@keyframes privacy-flow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
-.btn-primary, .btn-secondary {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 16px;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    width: 100%;
+/* Estados de riesgo con colores asíncronos */
+.risk-high { 
+  background: linear-gradient(135deg, rgba(254, 226, 226, 0.2), rgba(252, 165, 165, 0.1));
+  color: #fca5a5;
+  animation: risk-high-pulse 2s ease-in-out infinite;
 }
 
-.btn-primary {
-    background: var(--primary-gradient);
-    color: white;
+.risk-medium { 
+  background: linear-gradient(135deg, rgba(254, 252, 191, 0.2), rgba(217, 119, 6, 0.1));
+  color: #fbbf24;
+  animation: risk-medium-pulse 2.5s ease-in-out infinite;
 }
 
-.btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+.risk-low { 
+  background: linear-gradient(135deg, rgba(198, 246, 213, 0.2), rgba(34, 197, 94, 0.1));
+  color: #86efac;
+  animation: risk-low-pulse 3s ease-in-out infinite;
 }
 
-.btn-primary:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    transform: none;
+@keyframes risk-high-pulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(252, 165, 165, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(252, 165, 165, 0.6); }
 }
 
-.btn-secondary {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
+@keyframes risk-medium-pulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(251, 191, 36, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.6); }
 }
 
-.btn-secondary:hover {
-    background: #f1f5f9;
-    border-color: #cbd5e1;
-}
-
-/* Recent Analysis */
-.recent-list {
-    background: var(--bg-secondary);
-    border-radius: 8px;
-    padding: 12px;
-    min-height: 80px;
-}
-
-.empty-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-secondary);
-    text-align: center;
-}
-
-.empty-icon {
-    font-size: 24px;
-    margin-bottom: 8px;
-}
-
-.recent-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    border-bottom: 1px solid var(--border-color);
-    font-size: 12px;
-}
-
-.recent-item:last-child {
-    border-bottom: none;
-}
-
-.recent-text {
-    color: var(--text-primary);
-    flex: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.recent-risk {
-    font-size: 10px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-weight: 600;
-}
-
-.risk-low { background: #dcfce7; color: #166534; }
-.risk-medium { background: #fef3c7; color: #92400e; }
-.risk-high { background: #fee2e2; color: #991b1b; }
-
-/* Analysis Results */
-.analysis-results {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 16px;
-    margin-top: 8px;
-}
-
-.analysis-results h4 {
-    margin-bottom: 12px;
-    color: var(--text-primary);
-}
-
-.result-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 12px;
-}
-
-.result-item {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-}
-
-.result-label {
-    color: var(--text-secondary);
-}
-
-.result-value {
-    font-weight: 600;
-}
-
-.result-value.positive {
-    color: var(--success-color);
-}
-
-.result-value.negative {
-    color: var(--error-color);
-}
-
-.risk-high { color: var(--error-color); }
-.risk-medium { color: var(--warning-color); }
-.risk-low { color: var(--success-color); }
-
-.recommendation {
-    font-size: 12px;
-    color: var(--text-primary);
-    padding: 8px;
-    background: white;
-    border-radius: 4px;
-    border-left: 3px solid #6366f1;
-}
-
-/* Quantum Metrics */
-.metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-}
-
-.metric-card {
-    background: white;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 12px;
-    text-align: center;
-    position: relative;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.metric-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.metric-value {
-    font-size: 18px;
-    font-weight: 700;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.metric-label {
-    font-size: 10px;
-    color: var(--text-secondary);
-    margin-top: 2px;
-}
-
-.metric-trend {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    font-size: 10px;
-    font-weight: 600;
-}
-
-.trend-up { color: var(--success-color); }
-.trend-down { color: var(--error-color); }
-.trend-neutral { color: var(--text-secondary); }
-
-/* Protocols Section */
-.protocols-list {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.protocol-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    background: var(--bg-secondary);
-    border-radius: 6px;
-    border: 1px solid var(--border-color);
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-.protocol-item:hover {
-    transform: translateX(4px);
-    border-color: #6366f1;
-}
-
-.protocol-item.active {
-    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-    border-color: #0ea5e9;
-}
-
-.protocol-icon {
-    font-size: 14px;
-}
-
-.protocol-name {
-    flex: 1;
-    font-size: 12px;
-    font-weight: 500;
-}
-
-.protocol-status {
-    font-size: 10px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    background: #dcfce7;
-    color: #166534;
-    font-weight: 600;
-}
-
-.protocol-status:not(.active) {
-    background: #f1f5f9;
-    color: #64748b;
-}
-
-/* Impact Metrics */
-.impact-metrics {
-    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
-    border: 1px solid #bbf7d0;
-    border-radius: 8px;
-    padding: 16px;
-}
-
-.impact-metrics h4 {
-    margin-bottom: 12px;
-    color: var(--text-primary);
-}
-
-.impact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-.impact-item {
-    text-align: center;
-}
-
-.impact-value {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--success-color);
-    margin-bottom: 4px;
-}
-
-.impact-label {
-    font-size: 10px;
-    color: var(--text-secondary);
-    line-height: 1.3;
-}
-
-/* Footer */
-.popup-footer {
-    padding: 12px 16px;
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
-    border-radius: 0 0 12px 12px;
-}
-
-.footer-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.btn-icon {
-    background: none;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-    padding: 4px;
-    border-radius: 4px;
-    transition: background 0.2s ease;
-}
-
-.btn-icon:hover {
-    background: #e2e8f0;
-}
-
-.version {
-    font-size: 10px;
-    color: var(--text-secondary);
-}
-
-/* Scrollbar Styling */
-.popup-main::-webkit-scrollbar {
-    width: 4px;
-}
-
-.popup-main::-webkit-scrollbar-track {
-    background: #f1f5f9;
-}
-
-.popup-main::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 2px;
-}
-
-.popup-main::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
-}
-
-/* Animation Classes */
-.fade-in {
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.pulse {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.7; }
-}
-
-/* Notification Styles */
-.demo-notification {
-    animation: slideIn 0.3s ease-out;
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.notification-success {
-    background: var(--success-color) !important;
-}
-
-.notification-error {
-    background: var(--error-color) !important;
-}
-
-/* Responsive Improvements */
-@media (max-height: 500px) {
-    .popup-main {
-        gap: 12px;
-    }
-    
-    .popup-main h3 {
-        font-size: 13px;
-        margin-bottom: 6px;
-    }
-    
-    .action-buttons {
-        gap: 6px;
-    }
-    
-    .btn-primary, .btn-secondary {
-        padding: 10px 12px;
-        font-size: 13px;
-    }
+@keyframes risk-low-pulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(134, 239, 172, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(134, 239, 172, 0.6); }
 }
