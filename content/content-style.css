@@ -1,70 +1,561 @@
 /* Chalamandra QuantumMind Content Styles */
-.chalamandra-ritual-prompt {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+/* Chrome AI Hackathon 2025 */
+
+:root {
+    --chalamandra-primary: #FF6B35;
+    --chalamandra-secondary: #FFE66D;
+    --chalamandra-accent: #4ECDC4;
+    --quantum-superposition: #7E57C2;
+    --quantum-entanglement: #29B6F6;
+    --quantum-collapse: #FF7043;
+    --bg-dark: #0f172a;
+    --bg-darker: #1e1b4b;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --border-light: rgba(255, 255, 255, 0.1);
+    --border-medium: rgba(255, 255, 255, 0.2);
+    --shadow-glow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* Ghost Symbol Implementation */
-.chalamandra-ghost-symbol {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    width: 40px !important;
-    height: 40px !important;
-    opacity: 0.1 !important;
-    pointer-events: none !important;
-    z-index: 10000 !important;
-    transition: opacity 0.3s ease !important;
+/* Main Analysis Container */
+#chalamandra-analysis-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-.chalamandra-ghost-symbol:hover {
-    opacity: 0.3 !important;
+/* Floating Analysis Panel */
+.chalamandra-panel {
+    position: fixed;
+    width: 400px;
+    max-height: 600px;
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
+    border: 1px solid var(--border-medium);
+    border-radius: 16px;
+    box-shadow: var(--shadow-glow);
+    backdrop-filter: blur(20px);
+    color: var(--text-primary);
+    overflow: hidden;
+    animation: panelSlideIn 0.3s ease-out;
 }
 
-/* Ritual Execution Effects */
-@keyframes chalamandra-ritual-pulse {
-    0% {
+.chalamandra-panel.hidden {
+    display: none;
+}
+
+@keyframes panelSlideIn {
+    from {
         opacity: 0;
-        transform: scale(0.8);
+        transform: translateY(-20px) scale(0.95);
     }
-    50% {
-        opacity: 0.3;
-        transform: scale(1);
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
-    100% {
+}
+
+/* Panel Header */
+.chalamandra-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.chalamandra-logo {
+    font-size: 24px;
+    margin-right: 12px;
+    animation: quantumFloat 3s ease-in-out infinite;
+}
+
+@keyframes quantumFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-5px) rotate(5deg); }
+}
+
+.chalamandra-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--chalamandra-primary), var(--chalamandra-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    flex: 1;
+}
+
+.chalamandra-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.chalamandra-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+}
+
+/* Panel Content */
+.chalamandra-content {
+    padding: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.chalamandra-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chalamandra-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.chalamandra-content::-webkit-scrollbar-thumb {
+    background: var(--quantum-entanglement);
+    border-radius: 3px;
+}
+
+/* Analysis Sections */
+.analysis-section {
+    margin-bottom: 24px;
+}
+
+.analysis-section h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: var(--chalamandra-accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Risk Score */
+.risk-score {
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.risk-score.high {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(254, 215, 215, 0.1));
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.risk-score.medium {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(254, 252, 191, 0.1));
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.risk-score.low {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(220, 252, 231, 0.1));
+    color: #86efac;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+/* Paradox Items */
+.paradox-item {
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border-left: 4px solid;
+    animation: itemAppear 0.3s ease-out;
+}
+
+@keyframes itemAppear {
+    from {
         opacity: 0;
-        transform: scale(1.2);
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
 
-.chalamandra-ritual-effect {
-    animation: chalamandra-ritual-pulse 2s ease-out !important;
+.paradox-item.high {
+    background: rgba(239, 68, 68, 0.1);
+    border-left-color: #ef4444;
 }
 
-/* Gmail Specific Integration */
-.a3s {
-    position: relative !important;
+.paradox-item.medium {
+    background: rgba(245, 158, 11, 0.1);
+    border-left-color: #f59e0b;
 }
 
-/* Slack Specific Integration */
-.c-message_kit__text {
-    position: relative !important;
+.paradox-item.low {
+    background: rgba(34, 197, 94, 0.1);
+    border-left-color: #22c55e;
 }
 
-/* Teams Specific Integration */
-.ac-textBlock {
-    position: relative !important;
+.paradox-item.clear {
+    background: rgba(34, 197, 94, 0.1);
+    border-left-color: #22c55e;
 }
 
-/* Subtle UI enhancements for communication platforms */
-.compose-body, 
-[data-qa="message_input"],
-[role="textbox"] {
-    transition: all 0.3s ease !important;
+.paradox-item strong {
+    font-size: 12px;
+    display: block;
+    margin-bottom: 4px;
 }
 
-.compose-body.chalamandra-focused,
-[data-qa="message_input"].chalamandra-focused,
-[role="textbox"].chalamandra-focused {
-    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.1) !important;
-    border-color: #6366f1 !important;
-  }
+.paradox-item p {
+    margin: 0 0 6px 0;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.paradox-item small {
+    font-size: 10px;
+    color: var(--text-secondary);
+}
+
+/* Quantum States */
+.quantum-states {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.quantum-state {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    border: 1px solid var(--border-light);
+}
+
+.state-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.state-value {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.state-value.coherent {
+    background: rgba(34, 197, 94, 0.2);
+    color: #86efac;
+}
+
+.state-value.partially_coherent {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+}
+
+.state-value.decoherent {
+    background: rgba(239, 68, 68, 0.2);
+    color: #fca5a5;
+}
+
+/* Suggestions Section */
+.suggestions-section h4 {
+    color: var(--chalamandra-secondary);
+}
+
+.suggestion-item {
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border-left: 4px solid;
+    animation: suggestionAppear 0.4s ease-out;
+}
+
+@keyframes suggestionAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.suggestion-item.high {
+    background: rgba(34, 197, 94, 0.1);
+    border-left-color: #22c55e;
+}
+
+.suggestion-item.medium {
+    background: rgba(96, 165, 250, 0.1);
+    border-left-color: #60a5fa;
+}
+
+.suggestion-item.low {
+    background: rgba(168, 85, 247, 0.1);
+    border-left-color: #a855f7;
+}
+
+.suggestion-priority {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.suggestion-item.high .suggestion-priority {
+    background: #22c55e;
+    color: white;
+}
+
+.suggestion-item.medium .suggestion-priority {
+    background: #60a5fa;
+    color: white;
+}
+
+.suggestion-item.low .suggestion-priority {
+    background: #a855f7;
+    color: white;
+}
+
+.suggestion-item p {
+    margin: 0 0 8px 0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.suggestion-example {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 6px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    border-left: 2px solid var(--chalamandra-accent);
+}
+
+.suggestion-example em {
+    color: var(--chalamandra-accent);
+    font-style: normal;
+    font-weight: 600;
+}
+
+.suggestion-impact {
+    font-size: 10px;
+    color: var(--text-secondary);
+}
+
+/* Loading State */
+.chalamandra-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid var(--border-medium);
+    box-shadow: var(--shadow-glow);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    z-index: 10001;
+}
+
+.chalamandra-loading.hidden {
+    display: none;
+}
+
+.quantum-spinner {
+    font-size: 48px;
+    margin-bottom: 16px;
+    animation: quantumSpin 2s linear infinite;
+}
+
+@keyframes quantumSpin {
+    0% { transform: rotate(0deg) scale(1); }
+    25% { transform: rotate(90deg) scale(1.1); }
+    50% { transform: rotate(180deg) scale(1); }
+    75% { transform: rotate(270deg) scale(1.1); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+.chalamandra-loading p {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 14px;
+}
+
+/* Quick Analysis */
+.chalamandra-quick-analysis {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
+    border: 1px solid var(--border-medium);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: var(--shadow-glow);
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    max-width: 300px;
+    animation: quickSlideIn 0.3s ease-out;
+}
+
+.chalamandra-quick-analysis.hidden {
+    display: none;
+}
+
+@keyframes quickSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.quick-analysis {
+    font-size: 12px;
+}
+
+.quick-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    color: var(--chalamandra-primary);
+    font-weight: 600;
+}
+
+.quick-original {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    border-left: 2px solid var(--quantum-entanglement);
+}
+
+.quick-risk {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.quick-suggestion {
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+/* Error State */
+.chalamandra-error {
+    text-align: center;
+    padding: 20px;
+}
+
+.chalamandra-error h4 {
+    color: #ef4444;
+    margin-bottom: 8px;
+}
+
+.chalamandra-error p {
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+/* Platform-specific adjustments */
+.gmail-embedded .chalamandra-panel {
+    z-index: 100000; /* Higher z-index for Gmail */
+}
+
+.slack-embedded .chalamandra-panel {
+    border: 2px solid var(--quantum-entanglement);
+}
+
+.teams-embedded .chalamandra-panel {
+    background: linear-gradient(135deg, #2b2b2b, #1f1f1f);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .chalamandra-panel {
+        width: 95vw;
+        left: 2.5vw;
+        right: 2.5vw;
+    }
+    
+    .chalamandra-quick-analysis {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
+/* Selection styling for text analysis */
+.chalamandra-selected {
+    background: rgba(255, 107, 53, 0.2);
+    border-radius: 2px;
+    animation: selectionPulse 2s ease-in-out;
+}
+
+@keyframes selectionPulse {
+    0%, 100% { background-color: rgba(255, 107, 53, 0.2); }
+    50% { background-color: rgba(255, 107, 53, 0.4); }
+}
+
+/* Focus styles for accessibility */
+.chalamandra-panel:focus {
+    outline: 2px solid var(--quantum-highlight);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .chalamandra-panel {
+        border: 2px solid white;
+    }
+    
+    .risk-score, .paradox-item, .suggestion-item {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .chalamandra-panel,
+    .paradox-item,
+    .suggestion-item,
+    .chalamandra-quick-analysis {
+        animation: none;
+    }
+    
+    .quantum-spinner,
+    .chalamandra-logo {
+        animation: none;
+    }
+                                }
