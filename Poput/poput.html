@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,160 +7,110 @@
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <div class="popup-container">
-        <!-- Header -->
-        <header class="popup-header">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-icon">🦎</span>
-                    <h1>Chalamandra</h1>
-                </div>
-                <div class="status-indicator">
-                    <span class="status-dot active"></span>
-                    <span class="status-text">Active</span>
-                </div>
+    <div class="container">
+        <!-- Header con Logo Cuántico -->
+        <header class="header">
+            <div class="logo">
+                <div class="chalamandra-logo">🦎⚛️</div>
+                <h1>Chalamandra</h1>
+                <span class="subtitle">QuantumMind 2025</span>
             </div>
         </header>
 
-        <!-- Main Content -->
-        <main class="popup-main">
-            <!-- Hackathon Banner -->
-            <div class="hackathon-banner fade-in">
-                <div class="banner-content">
-                    <span class="banner-icon">🚀</span>
-                    <div class="banner-text">
-                        <strong>Chrome Challenge 2025</strong>
-                        <small>Live Demo Mode</small>
+        <!-- Sección de Estado Cuántico -->
+        <div class="quantum-section">
+            <h3>⚛️ Quantum Coherence Analysis</h3>
+            <div class="quantum-states" id="quantumStates">
+                <div class="state-superposition">
+                    <span class="state-label">Message Superposition:</span>
+                    <div class="qubit-display">
+                        <div class="qubit" id="surfaceQubit">|Surface⟩: 0.00</div>
+                        <div class="qubit" id="hiddenQubit">|Hidden⟩: 0.00</div>
+                        <div class="qubit" id="intentQubit">|Intent⟩: 0.00</div>
                     </div>
+                </div>
+                <div class="entanglement-indicator">
+                    <span class="entanglement-status" id="entanglementStatus">
+                        Entanglement: Measuring Quantum States...
+                    </span>
                 </div>
             </div>
+        </div>
 
-            <!-- Quick Actions -->
-            <section class="quick-actions">
-                <h3>Quick Actions</h3>
-                <div class="action-buttons">
-                    <button id="analyzeCurrent" class="btn-primary">
-                        <span class="btn-icon">🔍</span>
-                        Analyze Current Page
-                    </button>
-                    <button id="openDashboard" class="btn-secondary">
-                        <span class="btn-icon">📊</span>
-                        Open Dashboard
-                    </button>
-                </div>
-            </section>
-
-            <!-- Recent Analysis -->
-            <section class="recent-analysis">
-                <h3>Recent Analysis</h3>
-                <div id="recentList" class="recent-list">
-                    <div class="empty-state">
-                        <span class="empty-icon">📝</span>
-                        <p>No recent analysis</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Analysis Results -->
-            <div id="analysisResults" class="analysis-results" style="display: none;">
-                <h4>🎯 Real-time Analysis</h4>
-                <div class="result-grid">
-                    <div class="result-item">
-                        <span class="result-label">Platform:</span>
-                        <span class="result-value" id="resultPlatform">-</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Sentiment:</span>
-                        <span class="result-value" id="resultSentiment">-</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Clarity:</span>
-                        <span class="result-value" id="resultClarity">-</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">Risk Level:</span>
-                        <span class="result-value" id="resultRisk">-</span>
-                    </div>
-                </div>
-                <div class="recommendation" id="resultRecommendation">
-                    <strong>Recommendation:</strong> Start analysis to see suggestions
-                </div>
+        <!-- Panel de Estado y Riesgo -->
+        <div class="status-panel">
+            <div class="status-indicator" id="statusIndicator">
+                <div class="status-dot"></div>
+                <span id="statusText">Ready for Quantum Analysis</span>
             </div>
-
-            <!-- Quantum Metrics -->
-            <section class="quantum-metrics">
-                <h3>Communication Health</h3>
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <div class="metric-value">87%</div>
-                        <div class="metric-label">Clarity</div>
-                        <div class="metric-trend up">↑</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">92%</div>
-                        <div class="metric-label">Tone</div>
-                        <div class="metric-trend up">↑</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">15</div>
-                        <div class="metric-label">Today</div>
-                        <div class="metric-trend neutral">→</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Psychology Protocols -->
-            <section class="protocols-section">
-                <h3>Active Protocols</h3>
-                <div class="protocols-list">
-                    <div class="protocol-item active" data-protocol="trojanHorses">
-                        <span class="protocol-icon">🐎</span>
-                        <span class="protocol-name">Trojan Horses</span>
-                        <div class="protocol-status active">On</div>
-                    </div>
-                    <div class="protocol-item active" data-protocol="matrixBreaker">
-                        <span class="protocol-icon">💥</span>
-                        <span class="protocol-name">Matrix Breaker</span>
-                        <div class="protocol-status active">On</div>
-                    </div>
-                    <div class="protocol-item" data-protocol="reversePsychology">
-                        <span class="protocol-icon">🔮</span>
-                        <span class="protocol-name">Reverse Psychology</span>
-                        <div class="protocol-status">Off</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Impact Metrics -->
-            <div class="impact-metrics fade-in">
-                <h4>📈 Demonstrated Impact</h4>
-                <div class="impact-grid">
-                    <div class="impact-item">
-                        <div class="impact-value">40%</div>
-                        <div class="impact-label">Reduction in Communication Stress</div>
-                    </div>
-                    <div class="impact-item">
-                        <div class="impact-value">65%</div>
-                        <div class="impact-label">Improvement in Message Clarity</div>
-                    </div>
-                </div>
+            <div class="risk-score" id="riskScore">
+                Risk: <span class="score">--</span>
             </div>
-        </main>
+        </div>
 
-        <!-- Footer -->
-        <footer class="popup-footer">
-            <div class="footer-actions">
-                <button id="settingsBtn" class="btn-icon" title="Settings">
-                    ⚙️
+        <!-- Sección de Análisis de Paradojas -->
+        <div class="analysis-section">
+            <h3>🔍 Quantum Paradox Detection</h3>
+            <div class="analysis-result" id="analysisResult">
+                <div class="placeholder" id="analysisPlaceholder">
+                    Click "Quantum Analyze" to decode communication paradoxes
+                </div>
+                <div id="paradoxResults" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Sección de Sugerencias -->
+        <div class="suggestions-section">
+            <h3>🎯 Quantum Clarity Solutions</h3>
+            <div class="suggestions" id="suggestions">
+                <div class="placeholder" id="suggestionsPlaceholder">
+                    Clear communication suggestions will appear here
+                </div>
+                <div id="suggestionResults" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Botones de Acción -->
+        <div class="actions">
+            <button id="analyzeBtn" class="btn primary">
+                ⚛️ Quantum Analyze
+            </button>
+            <button id="settingsBtn" class="btn secondary">
+                🌌 Settings
+            </button>
+        </div>
+
+        <!-- Demo Section para Jueces -->
+        <div class="demo-section" id="demoSection">
+            <h3>🧪 Quick Demo</h3>
+            <div class="demo-buttons">
+                <button class="demo-btn" data-text="I'm not angry, but this could have been done better">
+                    Test Passive-Aggressive
                 </button>
-                <button id="helpBtn" class="btn-icon" title="Help">
-                    ❓
+                <button class="demo-btn" data-text="Maybe if you have time, could you look at this sometime?">
+                    Test Ambiguity
                 </button>
-                <div class="version">v1.0.0</div>
+                <button class="demo-btn" data-text="Great, another last-minute change">
+                    Test Sarcasm
+                </button>
             </div>
-        </footer>
+        </div>
+
+        <!-- Badge de Privacidad -->
+        <div class="privacy-badge">
+            <span class="privacy-icon">🔒</span>
+            Chrome AI Hackathon 2025 • 100% Local Processing
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+            <div class="quantum-loader">
+                <div class="qubit-spin">⚛️</div>
+                <p>Analyzing Quantum Paradoxes...</p>
+            </div>
+        </div>
     </div>
 
     <script src="popup.js"></script>
 </body>
-  </html>
+    </html>
