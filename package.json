@@ -1,0 +1,17 @@
+{
+  "name": "chalamandra-quantummind",
+  "version": "2025.1.0",
+  "description": "Quantum Paradox Communication AI - Chrome AI Hackathon 2025 Submission",
+  "scripts": {
+    "test": "node scripts/test-runner.js",
+    "test:quick": "node scripts/test-runner.js --quick",
+    "test:paradox": "node scripts/test-runner.js --paradox",
+    "test:quantum": "node scripts/test-runner.js --quantum",
+    "test:perf": "node scripts/test-runner.js --perf",
+    "build": "node scripts/build.js",
+    "dev": "node scripts/dev-server.js",
+    "lint": "eslint .",
+    "pack": "zip -r chalamandra-quantummind-2025.zip . -x '*.git*' 'node_modules/*' 'scripts/*'",
+    "deploy": "npm run build && npm run pack"
+  }
+}
